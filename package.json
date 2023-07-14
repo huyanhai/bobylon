@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@babylonjs/havok": "^1.1.0",
-    "@babylonjs/loaders": "^6.12.1",
-    "babylonjs": "^6.11.2",
+    "babylonjs": "^6.12.1",
+    "babylonjs-loaders": "^6.12.1",
     "vue": "^3.3.4"
   },
   "devDependencies": {

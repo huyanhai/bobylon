@@ -2,9 +2,9 @@ lockfileVersion: 5.4
 
 specifiers:
   '@babylonjs/havok': ^1.1.0
-  '@babylonjs/loaders': ^6.12.1
   '@vitejs/plugin-vue': ^4.2.3
-  babylonjs: ^6.11.2
+  babylonjs: ^6.12.1
+  babylonjs-loaders: ^6.12.1
   typescript: ^5.0.2
   vite: ^4.4.0
   vue: ^3.3.4
@@ -12,8 +12,8 @@ specifiers:
 
 dependencies:
   '@babylonjs/havok': 1.1.0
-  '@babylonjs/loaders': 6.12.1
-  babylonjs: 6.11.2
+  babylonjs: 6.12.1
+  babylonjs-loaders: 6.12.1
   vue: 3.3.4
 
 devDependencies:
@@ -51,13 +51,6 @@ packages:
     resolution: {integrity: sha512-BNo2d+gfkoCbbEGYOVZgdPWG6NRdo5Tjvd9rpjMs0sWV/EaKQ6kL8hnJUn+HVZx4hdyKrTkq8ThTGFt/nTediA==}
     dependencies:
       '@types/emscripten': 1.39.6
-    dev: false
-
-  /@babylonjs/loaders/6.12.1:
-    resolution: {integrity: sha512-srGP0VIgO60raXKTFjCUZmgVuV726MMMb/KsHFxN8G0JEfEwhI6M3dzavd52uv8BdveQZdWlmrG/j1Doj0Qguw==}
-    peerDependencies:
-      '@babylonjs/core': ^6.0.0
-      babylonjs-gltf2interface: ^6.0.0
     dev: false
 
   /@esbuild/android-arm/0.18.11:
@@ -395,8 +388,19 @@ packages:
       - typescript
     dev: true
 
-  /babylonjs/6.11.2:
-    resolution: {integrity: sha512-4jqsMO8ctL7c421/0J1o77DR1I8bgcDhOyYNC1iKuC9KA3kPZ2BkPIs6yOA6k8AUHrcNilkHhzX5nQF3nv9obA==}
+  /babylonjs-gltf2interface/6.12.1:
+    resolution: {integrity: sha512-4MJiFIozoO8KpJF2BtCWn8DeOmGWDG5DMYpKfGAFAdarZYwmhcNHFsGlc2k6UJRh59GELBvgUeO2x68qn+WiPA==}
+    dev: false
+
+  /babylonjs-loaders/6.12.1:
+    resolution: {integrity: sha512-BEbTzTQbdHBDaDJxjr2SXyerl4lCaMew8oe4uSMY1XzPeM9aHOBQylRazCOWcqJEjBLs3uELoQD2NEUk27Jv7w==}
+    dependencies:
+      babylonjs: 6.12.1
+      babylonjs-gltf2interface: 6.12.1
+    dev: false
+
+  /babylonjs/6.12.1:
+    resolution: {integrity: sha512-AbUToWL80iQfC2ucZ4iGA0SEB/Xqxk1UUqjkFF1C9D626TAGfwESNxdVDitdjTNZUi0dvy2UNcuka2jTnTacAg==}
     requiresBuild: true
     dev: false
 
@@ -450,14 +454,6 @@ packages:
   /estree-walker/2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
 
-  /fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /he/1.2.0:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
@@ -508,7 +504,7 @@ packages:
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: r2.cnpmjs.org/fsevents/2.3.2
     dev: true
 
   /semver/7.5.4:
@@ -565,7 +561,7 @@ packages:
       postcss: 8.4.25
       rollup: 3.26.2
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: r2.cnpmjs.org/fsevents/2.3.2
     dev: true
 
   /vue-template-compiler/2.7.14:
@@ -599,3 +595,13 @@ packages:
   /yallist/4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
     dev: true
+
+  r2.cnpmjs.org/fsevents/2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/fsevents/-/fsevents-2.3.2.tgz}
+    name: fsevents
+    version: 2.3.2
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
