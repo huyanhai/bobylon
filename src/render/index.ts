@@ -6,3 +6,4 @@ export * from "./texture";
 export * from "./particle";
 export * from "./physics"
 export * from "./gltf"
+export * from "./girl"

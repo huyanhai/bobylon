@@ -1,5 +1,4 @@
-import { Scene, Engine, Camera, Vector3, HemisphericLight, Light, ArcRotateCamera, UniversalCamera, FollowCamera, FreeCamera } from "babylonjs";
-
+import { Scene, Engine, Camera, Vector3, HemisphericLight, Light, ArcRotateCamera, UniversalCamera, FollowCamera, FreeCamera, CubeTexture } from "babylonjs";
 
 export class Render {
   public engine!: Engine;
@@ -25,17 +24,35 @@ export class Render {
     // this.camera = new UniversalCamera("camera", new Vector3(0, 0, -20), this.scene);
 
     // 圆弧相机
-    this.camera = new FreeCamera("camera", new Vector3(0, 5, -10), this.scene);
+    // this.camera = new FreeCamera("camera", new Vector3(0, 5, -10), this.scene);
+    // this.camera.setTarget(Vector3.Zero());
 
-    this.camera.setTarget(Vector3.Zero());
+    this.scene.createDefaultCamera(true, true, true);
+    this.scene.createDefaultLight(true);
+
+    // this.engine.displayLoadingUI()
+
+    const helperCamera = this.scene.activeCamera!;
+
+    helperCamera.radius = 10;
+
+    const envHelper = this.scene.createDefaultEnvironment();
+
+    // envHelper?.updateOptions({
+    //   skyboxTexture: new CubeTexture("/textures/flare.png", this.scene),
+    // });
+
+    this.scene.debugLayer.show()
+    // helperCamera.alpha = Math.PI / 4;
+    // helperCamera.beta = Math.PI / 4;
 
     // 跟随相机
     // this.camera = new FollowCamera("camera", new Vector3(0, 0, 0), this.scene);
 
-    this.camera.attachControl(el, true);
+    // this.camera.attachControl(el, true);
 
-    (this.camera as any).applyGravity = true;
-    (this.camera as any).ellipsoid = new Vector3(1, 1, 1);
+    // (this.camera as any).applyGravity = true;
+    // (this.camera as any).ellipsoid = new Vector3(1, 1, 1);
   }
 
   // 灯光

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Render, Texture, Particle, Physics ,Gltf} from "./render";
+import { Render, Texture, Particle, Physics, Gltf, Girl } from "./render";
 
 import { ref, onMounted } from "vue";
 
@@ -12,8 +12,8 @@ onMounted(() => {
   // Texture.renderTexure(render);
   // Sphere.renderSphere(render);
   // Physics.renderPhysics(render);
-  Gltf.renderGltf(render)
-
+  // Gltf.renderGltf(render)
+  Girl.renderGirl(render)
   render.render();
 });
 </script>
